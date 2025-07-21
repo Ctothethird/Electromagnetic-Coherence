@@ -18,9 +18,9 @@ import cpw.mods.fml.relauncher.ReflectionHelper
 object Laser
 {
   val maxDistance = 1
-
+  
   val minEnergy = 100D
-  val maxEnergy = 8000D
+  val maxEnergy = 12000D
 
   val minEnergyToMine = 4000D
   val maxEnergyToMine = 500000D
