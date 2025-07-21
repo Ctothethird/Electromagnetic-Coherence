@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.ReflectionHelper
  */
 object Laser
 {
-  val maxDistance = 100
+  val maxDistance = 1
 
   val minEnergy = 100D
   val maxEnergy = 8000D
@@ -44,7 +44,7 @@ object Laser
   {
     if (energy > minEnergy)
     {
-      val maxPos = start + (direction * maxDistance)
+      val maxPos = start + (direction * (maxDistance * energy)
       val hit = start.rayTrace(world, maxPos)
 
       if (hit != null)
