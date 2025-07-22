@@ -19,7 +19,7 @@ class TileFocusCrystal extends TileBase with ILaserHandler with IFocus
 
   var energy = 0D
   var color = new Vector3(1, 1, 1)
-
+  var direction = new Vector3;
   override def updateEntity()
   {
     if (isPowered())
@@ -41,7 +41,7 @@ class TileFocusCrystal extends TileBase with ILaserHandler with IFocus
 
     if (energy > 0)
     {
-      Laser.spawn(worldObj, position + 0.5 + normal * 0.9, position + 0.5, normal, color, energy)
+      Laser.spawn(worldObj, position + 0.5 + normal * 0.9, direction + 0.5, normal, color, energy)
       color = new Vector3(1, 1, 1)
       energy = 0;
     }
@@ -67,6 +67,7 @@ class TileFocusCrystal extends TileBase with ILaserHandler with IFocus
     ElectromagneticCoherence.proxy.renderLaser(worldObj, renderStart, position + 0.5, color, energy)
     this.energy += energy
     this.color = (this.color + color) / 2
+    this.direction += incedentDirection
     return true
   }
 
