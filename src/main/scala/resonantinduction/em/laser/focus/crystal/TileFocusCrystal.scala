@@ -43,7 +43,8 @@ class TileFocusCrystal extends TileBase with ILaserHandler with IFocus
     {
       Laser.spawn(worldObj, position + 0.5 + normal * 0.9, direction + 0.5, normal, color, energy)
       color = new Vector3(1, 1, 1)
-      energy = 0;
+      energy = 0
+      direction = 0
     }
   }
 
